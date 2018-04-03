@@ -5,14 +5,6 @@ body {
   margin:           0px;
 }
 
-/*
-	height messes up the headers in the blog in the articles
-	it's only appropriate for the top header.
-	add a class (new with blog)
-	Affects the 3 #header rules for the main header below
-	In HTML: add class="top" to main header in index.html and blog.html
-*/
-
 header.top {
   grid-area: header;
   background-color: #675c47;
@@ -23,6 +15,22 @@ header.top {
 header.top img#headerSlogan {
 	float: right;
 }
+
+nav {
+  grid-area:nav;
+	background-color: #efe5d0;
+	margin: 10px 10px 10px 10px;
+}
+nav ul {
+	margin: 0px;
+	list-style-type: none;
+	padding: 5px 0px 5px 0px;
+}
+nav ul li {
+	display: inline;
+	padding: 5px 10px 5px 10px;
+}
+
 
 div#gridContainer {
 	border-spacing: 10px;
@@ -72,23 +80,6 @@ footer {
   font-size:        90%;
 }
 
-
-/* nav new in blog */
-nav {
-  grid-area:nav;
-	background-color: #efe5d0;
-	margin: 10px 10px 10px 10px;
-}
-nav ul {
-	margin: 0px;
-	list-style-type: none;
-	padding: 5px 0px 5px 0px;
-}
-nav ul li {
-	display: inline;
-	padding: 5px 10px 5px 10px;
-}
-
 h1 {
   font-size:        120%;
   color:            #954b4b;
@@ -114,19 +105,15 @@ a:visited {
   border-bottom:    thin dotted #675c47;
 }
 
-/* ALL BELOW IS NEW FOR BLOG*/
-
-
-/* BELOW a above to override for nav */
 nav ul li a:link, nav ul li a:visited {
 	color: #954b4b;
 	border-bottom: none;
 	font-weight: bold;
 
-	/* optional! very hard to see although does help */
+
 	text-shadow: 1px 1px 3px #e2c2c2;
 
-	/* try this and see if you like it */
+
 	text-transform: uppercase;
 }
 
