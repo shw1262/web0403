@@ -1,11 +1,11 @@
-body { 
+body {
   background-color: #b5a789;
   font-family:      Georgia, "Times New Roman", Times, serif;
   font-size:        small;
   margin:           0px;
 }
 
-/* 
+/*
 	height messes up the headers in the blog in the articles
 	it's only appropriate for the top header.
 	add a class (new with blog)
@@ -14,6 +14,7 @@ body {
 */
 
 header.top {
+  grid-area: header;
   background-color: #675c47;
   margin: 10px 10px 0px 10px;
   height:           108px;
@@ -23,9 +24,58 @@ header.top img#headerSlogan {
 	float: right;
 }
 
+div#gridContainer {
+	border-spacing: 10px;
+  display: grid;
+  grid-gap: 10px;
+  margin: 10px;
+	grid-template-areas:
+  "header header header"
+  "nav nav nav"
+  "drinks main aside"
+  "footer footer footer" ;
+}
+
+.gridContainer > * {
+  font-size: 60px;
+  padding:5px;
+}
+
+section#drinks {
+    grid-area:drinks;
+    background-color: #efe5d0;
+    padding: 30px;
+}
+
+section#main {
+  grid-area:main;
+  background:       #efe5d0 url(images/background.gif) top left;
+  font-size:        105%;
+  padding:          30px;
+}
+
+aside {
+  grid-area:aside;
+  background:       #efe5d0 url(images/background.gif) bottom right;
+  font-size:        105%;
+  padding:          15px;
+
+}
+
+footer {
+  grid-area:footer;
+  background-color: #675c47;
+  color:            #efe5d0;
+  text-align:       center;
+  padding:          15px;
+  margin: 0px 10px 10px 10px;
+  font-size:        90%;
+}
+
 
 /* nav new in blog */
 nav {
+  grid-area:nav;
 	background-color: #efe5d0;
 	margin: 10px 10px 10px 10px;
 }
@@ -37,43 +87,6 @@ nav ul {
 nav ul li {
 	display: inline;
 	padding: 5px 10px 5px 10px;
-}
-
-/*
-div#gridContainer {
-	border-spacing: 10px;
-	...
-}
-*/
-
-section#drinks {
-    background-color: #efe5d0;
-    width: 20%;
-    padding: 15px;
-    vertical-align: top;
-}
-
-section#main {
-  background:       #efe5d0 url(images/background.gif) top left;
-  font-size:        105%;
-  padding:          15px;
-  vertical-align: top;
-}
-
-aside {
-  background:       #efe5d0 url(images/background.gif) bottom right;
-  font-size:        105%;
-  padding:          15px;
-  vertical-align: top;
-}
-
-footer {
-  background-color: #675c47;
-  color:            #efe5d0;
-  text-align:       center;
-  padding:          15px;
-  margin: 0px 10px 10px 10px;
-  font-size:        90%;
 }
 
 h1 {
@@ -101,7 +114,7 @@ a:visited {
   border-bottom:    thin dotted #675c47;
 }
 
-/* ALL BELOW IS NEW FOR BLOG */
+/* ALL BELOW IS NEW FOR BLOG*/
 
 
 /* BELOW a above to override for nav */
@@ -111,7 +124,7 @@ nav ul li a:link, nav ul li a:visited {
 	font-weight: bold;
 
 	/* optional! very hard to see although does help */
-	text-shadow: 1px 1px 3px #e2c2c2; 
+	text-shadow: 1px 1px 3px #e2c2c2;
 
 	/* try this and see if you like it */
 	text-transform: uppercase;
